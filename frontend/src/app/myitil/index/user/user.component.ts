@@ -12,7 +12,7 @@ export class UserComponent {
   constructor (
     private httpClient: HttpClient
   ) {
-    this.httpClient.get( 'http://localhost:8080/api' ).subscribe( ( data: any ) => {
+    this.httpClient.get( 'http://localhost:8000/api' ).subscribe( ( data: any ) => {
       this.response = data.message;
     } );
   }

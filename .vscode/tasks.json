@@ -1,0 +1,32 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Init DevEnv",
+            "dependsOn": [
+                "Initial DevEnv Setup",
+                "Start Backend",
+                "Start Frontend"
+            ]
+        },
+        {
+            "label": "Initial DevEnv Setup",
+            "type": "npm",
+            "script": "build"
+        },
+        {
+            "label": "Start Backend",
+            "type": "npm",
+            "script": "start",
+            "isBackground": true
+        },
+        {
+            "label": "Start Frontend",
+            "type": "npm",
+            "script": "servefrontend",
+            "isBackground": true
+        }
+    ]
+}

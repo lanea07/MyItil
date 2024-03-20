@@ -4,6 +4,7 @@ import "reflect-metadata";
 import { AppDataSource } from './data-source';
 import cors from "cors";
 import { routes } from './routes/routes';
+import Middlewares from './middleware/index';
 
 export class Server {
 
@@ -15,8 +16,8 @@ export class Server {
         this.app = app;
         this.app.use( cors( this.options ) );
         this.app.use( express.static( path.resolve( "./" ) + "/build/frontend/browser" ) );
-        this.app.use( "/api", routes );
-        this.app.get( "*", ( req: Request, res: Response ): void => {
+        this.app.use( "/api", Middlewares, routes );
+        this.app.get( "/", ( req: Request, res: Response ): void => {
             res.sendFile( path.resolve( "./" ) + "/build/frontend/browser/index.html" );
         } );
         AppDataSource.initialize();

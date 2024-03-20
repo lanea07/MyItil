@@ -7,6 +7,7 @@ const routes: Routes = [
     path: '',
     children: [
       { path: 'user', component: UserComponent, title: 'Users' },
+      { path: '**', redirectTo: 'user' }
     ]
   }
 ];

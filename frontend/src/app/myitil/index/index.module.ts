@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { IndexRoutingModule } from './index-routing.module';
 import { UserComponent } from './user/user.component';
+import { PrimeNGModule } from '../../globals/prime-ng/prime-ng.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { UserComponent } from './user/user.component';
   ],
   imports: [
     CommonModule,
-    IndexRoutingModule
+    IndexRoutingModule,
+    PrimeNGModule
   ]
 })
 export class IndexModule { }
